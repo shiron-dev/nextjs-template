@@ -1,3 +1,5 @@
+import tw from "twin.macro";
+
 export default function Home() {
-  return <h1>Hello, next.js!</h1>;
+  return <h1 tw={"text-center text-3xl"}>Hello, next.js!</h1>;
 }
