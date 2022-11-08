@@ -1,6 +1,6 @@
-name: CI
+name: CI-PR
 
-on: push
+on: pull_request
 
 jobs:
   build:
@@ -36,3 +36,7 @@ jobs:
         with:
           name: coverage
           path: coverage
+      - name: Show coverage in comments
+        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
