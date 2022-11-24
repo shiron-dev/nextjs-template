@@ -8,6 +8,9 @@ const config: Config = {
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   roots: ["<rootDir>/src"],
+  moduleNameMapper: {
+    "^@/(.*)": "<rootDir>/src/$1",
+  },
 };
 
 export default config;

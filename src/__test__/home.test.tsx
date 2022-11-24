@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Home from "../pages/index";
+import Home from "@/pages";
 
 describe("Rendering", () => {
   it("Home", () => {
-    const tree = render(<Home />);
-    expect(tree).toMatchSnapshot();
+    render(<Home />);
+    expect(screen).toMatchSnapshot();
   });
 });
