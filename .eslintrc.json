@@ -5,6 +5,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:import/errors",
+    "plugin:import/typescript",
     "prettier",
     "plugin:storybook/recommended"
   ],
