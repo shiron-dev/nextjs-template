@@ -4,7 +4,7 @@ import Home from "@/pages";
 
 describe("Rendering", () => {
   it("Home", () => {
-    render(<Home />);
-    expect(screen).toMatchSnapshot();
+    const { asFragment } = render(<Home />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
