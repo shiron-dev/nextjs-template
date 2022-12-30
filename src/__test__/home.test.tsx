@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Home from "../pages/index";
+import Home from "@/pages";
 
 describe("Rendering", () => {
   it("Home", () => {
     render(<Home />);
-    expect(screen.getByText("Hello, next.js!")).toBeInTheDocument();
+    expect(screen).toMatchSnapshot();
   });
 });
