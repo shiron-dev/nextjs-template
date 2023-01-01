@@ -24,11 +24,6 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
         run: npm install
-      - name: eslint review
-        uses: reviewdog/action-eslint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
       - name: Run lint
         run: npm run lint
       - name: Run test
