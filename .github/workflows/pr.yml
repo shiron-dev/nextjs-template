@@ -1,0 +1,16 @@
+name: CI-PR
+
+on: pull_request
+
+jobs:
+  pr-ci:
+    name: pr-ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: ci
+    steps:
+      - name: Show coverage in comments
+        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        id: coverage
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

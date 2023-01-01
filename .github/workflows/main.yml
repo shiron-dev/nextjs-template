@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
       - "main"
-  pull_request:
 
 jobs:
   ci:
@@ -34,14 +33,3 @@ jobs:
         with:
           name: coverage
           path: coverage
-  pr-ci:
-    name: pr-ci
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    needs: ci
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - name: Show coverage in comments
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
